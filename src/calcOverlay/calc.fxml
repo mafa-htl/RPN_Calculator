@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,17 +14,23 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" minHeight="300.0" minWidth="380.0" prefHeight="300.0" prefWidth="380.0" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="calcOverlay.CalcController">
+<GridPane alignment="center" hgap="10" minHeight="300.0" minWidth="380.0" prefHeight="300.0" prefWidth="380.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calcOverlay.CalcController">
    <children>
-      <VBox prefHeight="490.0" prefWidth="540.0" spacing="5.0">
+      <VBox alignment="CENTER" prefHeight="490.0" prefWidth="540.0" spacing="5.0">
          <children>
-            <TextField fx:id="inputField" VBox.vgrow="ALWAYS" />
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+            <TextField fx:id="inputField" maxWidth="370.0" minWidth="370.0" prefWidth="370.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <ScrollPane prefHeight="200.0" prefWidth="70.0">
                     <content>
-                      <AnchorPane fx:id="displayField" minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="55.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="225.0" prefWidth="65.0">
+                           <children>
+                              <TextArea fx:id="displayArea" prefHeight="225.0" prefWidth="70.0">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </TextArea>
+                           </children></AnchorPane>
                     </content>
                   </ScrollPane>
                   <GridPane hgap="2.0" vgap="2.0">
@@ -39,62 +46,62 @@
                         <RowConstraints minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="8" GridPane.columnIndex="1">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addEight" prefHeight="55.0" prefWidth="55.0" text="8" GridPane.columnIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="7">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addSeven" prefHeight="55.0" prefWidth="55.0" text="7">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="9" GridPane.columnIndex="2">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addNine" prefHeight="55.0" prefWidth="55.0" text="9" GridPane.columnIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="4" GridPane.rowIndex="1">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addFour" prefHeight="55.0" prefWidth="55.0" text="4" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addFive" prefHeight="55.0" prefWidth="55.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addSix" prefHeight="55.0" prefWidth="55.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="1" GridPane.rowIndex="2">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addOne" prefHeight="55.0" prefWidth="55.0" text="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addTwo" prefHeight="55.0" prefWidth="55.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addThree" prefHeight="55.0" prefWidth="55.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="0" GridPane.rowIndex="3">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addZero" prefHeight="55.0" prefWidth="55.0" text="0" GridPane.rowIndex="3">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addDot" prefHeight="55.0" prefWidth="55.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="-" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <Button minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onMouseClicked="#addMinus" prefHeight="55.0" prefWidth="55.0" text="-" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -103,17 +110,17 @@
                   </GridPane>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="2.0">
                      <children>
-                        <Button minHeight="40.0" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Enter">
+                        <Button minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#enter" prefHeight="40.0" prefWidth="120.0" text="Enter">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="40.0" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="C">
+                        <Button minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#clearAll" prefHeight="40.0" prefWidth="120.0" text="C">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button minHeight="40.0" minWidth="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="CE">
+                        <Button minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#clearInput" prefHeight="40.0" prefWidth="120.0" text="CE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -129,32 +136,32 @@
                             <RowConstraints minHeight="32.0" prefHeight="32.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="58.0" text="+">
+                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="32.0" prefWidth="58.0" text="+">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="58.0" text="-" GridPane.columnIndex="1">
+                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" onMouseClicked="#subtract" prefHeight="32.0" prefWidth="58.0" text="-" GridPane.columnIndex="1">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="58.0" text="*" GridPane.rowIndex="1">
+                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" onMouseClicked="#multiply" prefHeight="32.0" prefWidth="58.0" text="*" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="58.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" onMouseClicked="#divide" prefHeight="32.0" prefWidth="58.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Button>
-                              <Button minHeight="33.0" minWidth="58.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" text="1/x" GridPane.rowIndex="2">
+                              <Button minHeight="33.0" minWidth="58.0" mnemonicParsing="false" onMouseClicked="#reverse" prefHeight="33.0" prefWidth="58.0" text="1/x" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Button>
-                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="58.0" text="x &lt;-&gt; y" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Button minHeight="32.0" minWidth="58.0" mnemonicParsing="false" onMouseClicked="#switchPos" prefHeight="32.0" prefWidth="58.0" text="x &lt;-&gt; y" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -172,4 +179,10 @@
          </padding>
       </VBox>
    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>
